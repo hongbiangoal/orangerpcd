@@ -158,8 +158,9 @@ int orange_session_grant(struct orange_session *self, const char *scope, const c
     char *new_scope, *new_obj, *new_func, *new_id, *new_perms;
     int id_len;
 
-    if (!object || !function)
+    if (!object || !function){
         return -EINVAL;
+	}
 
 	pthread_mutex_lock(&self->lock); 
 
